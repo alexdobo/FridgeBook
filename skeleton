@@ -1,0 +1,22 @@
+//skelenton
+
+//measure 2wo times a day(light)
+//regular use
+
+
+//boolean 
+//returns buy milk or not (light)
+
+
+//quantity
+//how much milk left
+
+//stats
+//calculate average dayly milk consumption
+
+//days(full)
+//quantity/milk avg
+
+//send a msg every two hours if not enough milk(light)
+
+//warning flag (full)
