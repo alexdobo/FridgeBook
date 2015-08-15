@@ -1,1 +1,5 @@
 //pls list functions u ve done here
+//Arya
+void Alarm ();
+int daysLast (int currentMilk, int avgConsumption);
+int needMilkOrNot (int warningVol, int currentVol );
