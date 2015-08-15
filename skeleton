@@ -37,28 +37,28 @@ for(int i; i<1000000000;i++){
 //avg = [sum(v(1:7))]/7 days
 //avg 
 
-
-//days(full)
+//===================================================================
+//days(full) for detailed notice
 //day= current quantity/V milk avg
 int daysLast (int currentMilk, int avgConsumption){
   int days = (int) currentMilk/avgConsumption; //or round()?
   return days;
 }
-
+//===================================================================
 //send a msg every two hours if not enough milk(light)
 
 //warning flag (full)
 
 
 
-//======================================
+//====================================================================
 
 //if we were to call the measure funtion on a specific time
 
 #include <Time.h>
 #include <TimeAlarms.h>
 
-void Alarm (){
+void Alarm ( ){
   Alarm.alarmRepeat(/*hours8*/, /*minutes*/, /*seconds*/, /*function*/);
 }
-//========================================
+//====================================================================
