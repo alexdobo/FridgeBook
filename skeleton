@@ -1,3 +1,6 @@
+
+int Vc=0;
+
 //skelenton
 
 //measure 2wo times a day(light)
@@ -6,17 +9,26 @@
 //or 0:00 everyday
 
 
+//quantity
+//how much milk left
+
+
+
+
+
 //boolean 
 //returns buy milk or not (light)
 //if milk volume is less than 50ml, send the msg
 
 
-//quantity
-//how much milk left
+
+
+
 
 //stats
 //calculate average dayly milk consumption
 //avg = [(V2-V1)+(V3-V2)+(V4-V3)+...]/N day
+//avg 
 
 
 //days(full)
