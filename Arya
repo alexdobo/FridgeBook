@@ -19,7 +19,7 @@ int daysLast (int currentMilk, int avgConsumption){
 }
 
 //========================================
-int needMilkOrNot (int warningVol, int currentVol){
+int needMilkOrNot (int warningVol, int currentVol ){
   if(warningVol > currentVol){
     return 1;
   }else{
@@ -28,6 +28,8 @@ int needMilkOrNot (int warningVol, int currentVol){
 }
 
 //========================================
+
+
 
 //========================================
 
