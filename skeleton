@@ -1,5 +1,6 @@
 
-int volumn[] = new Part[10000000];
+//init a array to store vol measurements
+public int volumn[] = new Part[10000000];
 
 //skelenton
 
@@ -8,8 +9,9 @@ int volumn[] = new Part[10000000];
 //0:00, 8:00, 16:00
 //take volumn at 0:00 everyday
 
+
 for(int i; i<1000000000;i++){
-volumn[i]=reader.nextInt();
+  volumn[i]=reader.nextInt();
 }
 
 //quantity
@@ -30,14 +32,33 @@ volumn[i]=reader.nextInt();
 
 
 //stats
-//calculate average dayly milk consumption
-//avg = [(V2-V1)+(V3-V2)+(V4-V3)+...]/N day
+//calculate average daily milk consumption
+//if we were to use a wk's data 
+//avg = [sum(v(1:7))]/7 days
 //avg 
 
 
 //days(full)
-//day= V current quantity/V milk avg
+//day= current quantity/V milk avg
+int daysLast (int currentMilk, int avgConsumption){
+  int days = (int) currentMilk/avgConsumption; //or round()?
+  return days;
+}
 
 //send a msg every two hours if not enough milk(light)
 
 //warning flag (full)
+
+
+
+//======================================
+
+//if we were to call the measure funtion on a specific time
+
+#include <Time.h>
+#include <TimeAlarms.h>
+
+void Alarm (){
+  Alarm.alarmRepeat(/*hours8*/, /*minutes*/, /*seconds*/, /*function*/);
+}
+//========================================
