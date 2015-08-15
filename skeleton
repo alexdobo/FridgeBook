@@ -14,13 +14,15 @@ for(int i; i<52;i++){
 for(int j; i<7;i++){
 volumn[i][j]=reader.nextInt();
 
+//quantity
+//how much milk left
 volumnNow=volumn[i][j];
 }
 }
 
-//quantity
-//how much milk left
-int 
+
+
+
 
 
 
@@ -30,20 +32,43 @@ int
 //returns buy milk or not (light)
 //if milk volume is less than 50ml, send the msg
 
+if (volumnNow<50){
+//tigger send the text
 
+
+}
 
 
 
 
 //stats
-//calculate average dayly milk consumption
-//avg = [(V2-V1)+(V3-V2)+(V4-V3)+...]/N day
+//calculate average daily milk consumption
+//if we were to use a wk's data 
+//avg = [sum(v(1:7))]/7 days
 //avg 
 
-
-//days(full)
-//day= V current quantity/V milk avg
-
+//===================================================================
+//days(full) for detailed notice
+//day= current quantity/V milk avg
+int daysLast (int currentMilk, int avgConsumption){
+  int days = (int) currentMilk/avgConsumption; //or round()?
+  return days;
+}
+//===================================================================
 //send a msg every two hours if not enough milk(light)
 
 //warning flag (full)
+
+
+
+//====================================================================
+
+//if we were to call the measure funtion on a specific time
+
+#include <Time.h>
+#include <TimeAlarms.h>
+
+void Alarm ( ){
+  Alarm.alarmRepeat(/*hours8*/, /*minutes*/, /*seconds*/, /*function*/);
+}
+//====================================================================
