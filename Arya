@@ -8,6 +8,7 @@
 
 void Alarm (){
   Alarm.alarmRepeat(/*hours8*/, /*minutes*/, /*seconds*/, /*function*/);
+  //also need serial begin and set time(int void set up probably?)
 }
 //========================================
 //days(full)
