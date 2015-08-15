@@ -65,7 +65,7 @@ void loop()
         if(DEBUG){Serial.println("pinDevid1 is HIGH");}
         pinDevid1State = true;
         //Sending request to PushingBox when the pin is HIGHT
-        sendToPushingBox(DEVID1);
+        sendToPushingBox(DEVID1,item,quantity,unit,days);
       }
        if (digitalRead(pinDevid1) == LOW && pinDevid1State == true) // switch on pinDevid1 is OFF
       {
