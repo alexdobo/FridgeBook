@@ -1,5 +1,6 @@
 
 int volumn[] = new Part[52][7];
+int volumnNow;
 
 
 //skelenton
@@ -12,6 +13,8 @@ int volumn[] = new Part[52][7];
 for(int i; i<52;i++){
 for(int j; i<7;i++){
 volumn[i][j]=reader.nextInt();
+
+volumnNow=volumn[i][j];
 }
 }
 
