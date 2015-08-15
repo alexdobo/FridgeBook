@@ -2,10 +2,13 @@
 
 //measure 2wo times a day(light)
 //regular use
+//0:00, 8:00, 16:00
+//or 0:00 everyday
 
 
 //boolean 
 //returns buy milk or not (light)
+//if milk volume is less than 50ml, send the msg
 
 
 //quantity
@@ -13,9 +16,11 @@
 
 //stats
 //calculate average dayly milk consumption
+//avg = [(V2-V1)+(V3-V2)+(V4-V3)+...]/N day
+
 
 //days(full)
-//quantity/milk avg
+//day= V current quantity/V milk avg
 
 //send a msg every two hours if not enough milk(light)
 
