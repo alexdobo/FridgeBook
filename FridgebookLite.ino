@@ -13,7 +13,8 @@
 byte mac[] = { 0x00, 0xAA, 0xBB, 0xCC, 0xDE, 0x19 };   // Be sure this address is unique in your network
 
 //Your secret DevID from PushingBox.com. You can use multiple DevID  on multiple Pin if you want
-char DEVID1[] = "v07D2807E9ECDF2D";        //Scenario : "The mailbox is open"
+char DEVID1[] = "v5F6CC1A03EB0EB4";        //Scenario : "The mailbox is open"
+char DEVID2[] = "vEFD45732E968A15"; //For eggs
 
 //Numeric Pin where you connect your switch
 uint8_t pinDevid1 = 3; // Example : the mailbox switch is connect to the Pin 3
@@ -55,6 +56,8 @@ void setup() {
   delay(1000);
 }
 
+
+
 void loop()
 {
       ////
@@ -65,7 +68,7 @@ void loop()
         if(DEBUG){Serial.println("pinDevid1 is HIGH");}
         pinDevid1State = true;
         //Sending request to PushingBox when the pin is HIGHT
-        sendToPushingBox(DEVID1);
+        sendToPushingBox(DEVID1,item);
       }
        if (digitalRead(pinDevid1) == LOW && pinDevid1State == true) // switch on pinDevid1 is OFF
       {
@@ -96,28 +99,32 @@ void loop()
 
 
 //Function for sending the request to PushingBox
-void sendToPushingBox(char devid[], char item[], int quantity, char unit[], int days){
+void sendToPushingBox(char devid[], char item[]){
   client.stop();
   if(DEBUG){Serial.println("connecting...");}
 
   if (client.connect(serverName, 80)) {
     if(DEBUG){Serial.println("connected");}
 
-//pushingbox?devid=v07D2807E9ECDF2D&item=milk&quantity=5&unit=mL&days=7"
+//pushingbox?devid=v5F6CC1A03EB0EB4&item=milk"
+//Debug using 
+//no eggs
+//curl "http://api.pushingbox.com/pushingbox?devid=v5F6CC1A03EB0EB4&item=milk"
+//eggs 
+//curl "http://api.pushingbox.com/pushingbox?devid=vEFD45732E968A15&item=eggs"
 
 
     if(DEBUG){Serial.println("sendind request");}
     client.print("GET /pushingbox?devid=");
-    
-	client.print(devid);
+    if(item="eggs"){
+		client.print(DEVID2);//for egg pun
+	}
+	else
+	{
+		client.print(devid); // preset to v5F6CC1A03EB0EB4
+	}
     client.print("&item=");
-	client.print(item);
-	client.print("&quantity=");
-	client.print(quantity);
-	client.print("&unit=");
-	client.print(unit);
-	client.print("&days=");
-	client.print(days)
+	client.print(item); //eg. milk, eggs etc.
 	
     client.println(" HTTP/1.1");
     client.print("Host: ");
