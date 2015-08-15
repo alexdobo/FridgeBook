@@ -1,0 +1,23 @@
+
+//======================================
+
+//if we were to call the measure funtion on a specific time
+
+#include <Time.h>
+#include <TimeAlarms.h>
+
+void Alarm (){
+  Alarm.alarmRepeat(/*hours8*/, /*minutes*/, /*seconds*/, /*function*/);
+}
+//========================================
+//days(full)
+//day= current quantity/V milk avg
+int daysLast (int currentMilk, int avgConsumption){
+  int days = (int) currentMilk/avgConsumption; //or round()?
+  return days;
+}
+
+//========================================
+
+
+
