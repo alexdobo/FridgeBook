@@ -63,7 +63,7 @@ void setup() {
 void loop()
 {
       //time alarm for reading
-	  Alarm.alarmRepeat(24,0,0, digitalRead(milk) );
+	  Alarm.alarmRepeat(17,0,0, digitalRead(milk) );
 	  
       // Listening for the milk state
       // if milk isnt enough 
