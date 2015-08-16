@@ -36,17 +36,11 @@ void setup() {
 }
 
 void loop() {
-
-  //an old value here
-  int initValue
-  //a new value
-  int loadValue = analogRead(loadPin);  // Get analog read
-  //subtract
-  int sampleValue = initValue - loadValue;
+  
+  //get sample
+  long sample = getsample(initLoad);
   //add sample
-   int oldestSample = addSample(sampleValue);
-  //the new value becomes the new old value 
-  initValue = loadValue;
+  int oldSample = addSample(sample);
   //get average
   samplesAverage = runningAverage(loadValue, oldestSample);
   
@@ -60,10 +54,17 @@ void loop() {
       Serial.println(loadGrams);
     }*/
     
-    time = millis();  // Set time to mark start of delay
+    //time = millis();  // Set time to mark start of delay
   }
 }
-
+long getSample(long initLoad){
+  Alarm.alarmRepeat(17,0,0, digitalRead(loadPin)); //alarm function has to be in void loop?
+  initLoad //???
+  long newLoad = digitalRead(LoadPin);
+  long sample = initLoad - newLoad;
+  return sample;
+  
+}
 // Function - running average
 long runningAverage(long newSample, long oldSample) {
   // Add new sample and subtract old sample from the samples buffer total
